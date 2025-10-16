@@ -105,3 +105,17 @@
     color: #ffffff;
     text-decoration: none;
   }
+/* Estilos para a animação de rolagem controlada por JavaScript */
+
+/* Estado inicial (escondido/fora de posição) */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Começa 20px abaixo do lugar final */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transição suave */
+}
+
+/* Estado final (visível/na posição correta) */
+.fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
