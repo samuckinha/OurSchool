@@ -153,14 +153,14 @@ header {
 }
 
 .estudante-imagem {
-    width: 150px; /* Aumenta um pouco a imagem */
+    width: 150px; 
     height: 150px;
-    border-radius: 50%; /* Torna a imagem redonda */
+    border-radius: 50%; 
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #40A2E3; /* Borda da cor da escola */
+    border: 3px solid #40A2E3;
+    object-position: 50% 10%; 
 }
-
 .estudante-nome {
     font-size: 1.2em;
     margin-bottom: 10px;
