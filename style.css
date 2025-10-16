@@ -1,117 +1,209 @@
+/* --- Melhorias de Tipografia e Reset --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-  }
-  
-  header {
+}
+
+/* Use uma fonte moderna do Google Fonts se puder (ex: 'Poppins') */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Cor de texto padrão mais escura */
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+}
+
+/* --- HEADER (Cabeçalho) --- */
+header {
     background-color: #424e61;
-    color: white;
     width: 100%;
-    padding: 20px;
-  }
-  
-  .cabecalho-itens {
-    max-width: 1980px;
+    padding: 10px 0; /* Diminui o padding para parecer mais elegante */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho-itens {
+    max-width: 1200px; /* Limita a largura para melhor leitura */
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  
-  .cabecalho-imagem {
-    width: 6%;
+    justify-content: space-between; /* Espaça os itens */
+    padding: 0 20px;
+}
+
+.cabecalho_imagem { /* Corrigido de cabecalho-imagem para cabecalho_imagem */
+    width: 50px; /* Tamanho da logo */
+    height: 50px;
+}
+
+.titulo_site {
+    /* Remove padding desnecessário */
+    padding: 0 20px; 
+    font-size: 1.8em;
+    color: white;
+    flex-grow: 1; /* Permite que o título ocupe o espaço */
+    text-align: left;
+}
+
+.sociais {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-  }
-  
-  .titulo_site {
-    padding: 50px;
-    text-align: center;
-    width: 50%;
-    font-size: 30px;
-  }
-  
-  .sociais {
-    display: flex;
-    justify-content: flex-end;
-    width: 25%;
-    padding-right: 30px;
-  }
-  
-  .banner1 {
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.sociais img {
+    width: 25px; /* Tamanho dos ícones sociais */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.sociais img:hover {
+    transform: scale(1.1); /* Animação de hover */
+}
+
+/* --- CARROSSEL (Banner) --- */
+.banner1 {
     display: flex;
     justify-content: center;
-  }
-  .fade-in-on-scroll {
+    overflow: hidden; /* Esconde as imagens que estão fora do container */
+    margin-bottom: 40px;
+}
+
+.carrossel-container {
+    width: 100%;
+    max-width: 1200px; /* Tamanho máximo do carrossel */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carrossel-slide {
+    display: flex;
+    /* A largura total é o número de imagens * 100% */
+    width: 400%; /* 4 imagens */ 
+    animation: slide 15s infinite alternate; /* Animação via CSS */
+}
+
+.carrossel-slide img {
+    width: 25%; /* Cada imagem ocupa 1/4 da largura */
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); } /* Primeira imagem */
+    30% { transform: translateX(-25%); } 
+    55% { transform: translateX(-25%); } /* Segunda imagem */
+    60% { transform: translateX(-50%); }
+    85% { transform: translateX(-50%); } /* Terceira imagem */
+    90% { transform: translateX(-75%); }
+    100% { transform: translateX(-75%); } /* Quarta imagem (loop) */
+}
+
+
+/* --- SEÇÃO ESTUDANTES --- */
+.estudante {
+    background-color: #fff; /* Fundo branco para contraste */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.estudante:nth-of-type(2) { /* Estiliza a segunda seção estudante diferente (opcional) */
+    background-color: #d3dae2; 
+}
+
+.estudante_titulo {
+    font-size: 2em;
+    color: #424e61;
+    margin-bottom: 40px;
+}
+
+.estudantes_todos {
+    display: flex;
+    justify-content: center; /* Centraliza o grupo de cards */
+    flex-wrap: wrap;
+    gap: 30px; /* Espaçamento entre os cards */
+}
+
+.estudante-div {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais visível */
+    width: 280px; /* Largura fixa para os cards */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Adiciona a classe de animação para o scroll-reveal */
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+
+.estudante-div:hover {
+    transform: translateY(-8px); /* Efeito de flutuação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.estudante-div.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.estudante-imagem {
+    width: 150px; /* Aumenta um pouco a imagem */
+    height: 150px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #40A2E3; /* Borda da cor da escola */
+}
+
+.estudante-nome {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #424e61;
+    font-weight: 600;
+}
+
+.estudante-icone {
+    width: 25px; /* Diminui um pouco os ícones para ficarem mais elegantes */
+    padding: 0 5px;
+    transition: opacity 0.3s;
+}
+
+.estudante-icone:hover {
+    opacity: 0.7;
+}
+
+/* --- RODAPÉ --- */
+.escola {
+    background-image: linear-gradient(to right, #297bb3, #40A2E3);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.escola-título { /* Correção na escrita do título (título com 'i' agudo) */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Regras que você já tinha (ajustadas para o novo design) */
+.fade-in-on-scroll { /* Mantido para compatibilidade com o JS */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
 }
 
 .fade-in-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
-}  
-  
-  .estudante_titulo {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .estudante-nome {
-    text-align: center;
-  }
-  
-  .estudante-imagem {
-    width: 120px;
-  }
-  
-  .estudante-icone {
-    width: 38px;
-    padding: 4px 8px;
-  }
-  
-  .estudante {
-    background-color: #d3dae2;
-    padding: 24px 0;
-    text-align: center;
-  }
-  
-  .estudante-div {
-    text-align: center;
-    padding: 24px 0;
-  }
-  
-  .estudantes_todos {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .escola {
-    background-image: linear-gradient(#40A2E3, #297bb3);
-    color: white;
-    padding: 24px 0;
-    text-align: center;
-  }
-  
-  .escola-titulo {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .logo_rodape {
-    height: 80px;
-    padding: 12px 0;
-  }
-  
-  .link {
-    color: #ffffff;
-    text-decoration: none;
-  }
+}
