@@ -23,35 +23,29 @@
     <div class="dashboard-wrapper">
         
         <aside class="profile-sidebar">
-            <img class="profile-avatar" src="estudante_menino.png" alt="Foto do Aluno">
-            <h3 id="aluno-nome">Samuel Schamne</h3>
-            <p id="aluno-ra" class="ra-info">RA: 123456</p>
-            <hr>
-            <nav class="sidebar-nav">
-                <a href="#dashboard" class="nav-item active">🏠 Dashboard</a>
-                <a href="#notas" class="nav-item">📊 Minhas Notas</a>
-                <a href="#aulas" class="nav-item">📚 Conteúdo / Aulas</a>
-                <a href="#financeiro" class="nav-item">💰 Financeiro</a>
-                <a href="#secretaria" class="nav-item">📬 Contato Secretaria</a>
-            </nav>
-        </aside>
+    <hr>
+    <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item nav-link active" data-target="dashboard">🏠 Dashboard</a>
+        <a href="#notas" class="nav-item nav-link" data-target="notas">📊 Minhas Notas</a>
+        <a href="#aulas" class="nav-item nav-link" data-target="aulas">📚 Conteúdo / Aulas</a>
+        <a href="#financeiro" class="nav-item nav-link" data-target="financeiro">💰 Financeiro</a>
+        <a href="#secretaria" class="nav-item nav-link" data-target="secretaria">📬 Contato Secretaria</a>
+    </nav>
+</aside>
+     <main class="dashboard-content">
+    
+    <section id="dashboard" class="content-section active-section">
+        <div class="welcome-section">
+            <h1>Bem-vindo(a) de volta, Samuel!</h1>
+            <p>Aqui você encontra todas as informações sobre sua vida escolar.</p>
+        </div>
 
-        <main class="dashboard-content">
+        <div class="dashboard-grid">
             
-            <section class="welcome-section">
-                <h1>Bem-vindo(a) de volta, Samuel!</h1>
-                <p>Aqui você encontra todas as informações sobre sua vida escolar.</p>
-            </section>
-
             <div class="feature-card carteirinha-card">
                 <h2>Carteirinha Digital</h2>
                 <div class="student-id-card">
-                    <img src="logo_nossa_escola.png" alt="Logo" class="card-logo">
-                    <p class="card-title">CARTEIRINHA ESTUDANTIL</p>
-                    <p class="card-name" id="card-nome">Samuel Schamne</p>
-                    <p class="card-ra" id="card-ra">RA: 123456</p>
-                    <p class="card-validity">Válida até: 12/2025</p>
-                </div>
+                    </div>
                 <button class="action-btn primary-btn">Imprimir PDF</button>
             </div>
 
@@ -62,31 +56,134 @@
                     <li>**Banco de Dados:** 8.0</li>
                     <li>**Matemática:** 7.8</li>
                 </ul>
-                <button class="action-btn secondary-btn">Ver Detalhes</button>
+                <button class="action-btn secondary-btn" data-target="notas">Ver Detalhes</button>
             </div>
 
             <div class="feature-card notices-card">
                 <h2>Avisos Importantes</h2>
-                <div class="notice">
-                    <p>⚠️ **Prova de ADS Adiada:** Nova data: 25/11.</p>
-                    <p>🔔 **Reunião de Pais:** Dia 20/10 às 19h.</p>
-                </div>
                 <button class="action-btn secondary-btn">Ver Todos</button>
             </div>
+            
+        </div>
+    </section>
 
-        </main>
-    </div>
+    <section id="notas" class="content-section hidden-section">
+        <h1>📊 Minhas Notas Detalhadas</h1>
+        <p>Histórico completo das suas avaliações e média por disciplina.</p>
+        
+        <table class="grades-table">
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Média Final</th>
+                    <th>Faltas</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Desenvolvimento Web</td><td>9.5</td><td>2</td><td class="status-aprovado">Aprovado</td></tr>
+                <tr><td>Banco de Dados</td><td>8.0</td><td>4</td><td class="status-aprovado">Aprovado</td></tr>
+                <tr><td>Lógica de Programação</td><td>6.5</td><td>6</td><td class="status-recuperacao">Recuperação</td></tr>
+                <tr><td>Matemática</td><td>7.8</td><td>0</td><td class="status-aprovado">Aprovado</td></tr>
+            </tbody>
+        </table>
+    </section>
 
-    <script>
+    <section id="aulas" class="content-section hidden-section">
+        <h1>📚 Conteúdo e Aulas</h1>
+        <p>Acesse o material de apoio, slides e gravações das aulas.</p>
+        
+        <div class="class-materials">
+            <div class="material-card">
+                <h3>Desenvolvimento Web (Módulo 3)</h3>
+                <p>Aula 10: Formulários e Validação JS</p>
+                <a href="#" class="download-link">Download Slides</a> | <a href="#" class="download-link">Ver Gravação</a>
+            </div>
+            <div class="material-card">
+                <h3>Banco de Dados (Módulo 2)</h3>
+                <p>Revisão: Comandos JOIN e Subqueries</p>
+                <a href="#" class="download-link">Download Exercícios</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="financeiro" class="content-section hidden-section">
+        <h1>💰 Meu Financeiro</h1>
+        <p>Visualize boletos, status de pagamento e negocie mensalidades.</p>
+
+        <div class="finance-status">
+            <div class="due-bill">
+                <p>Próximo Vencimento: **Mensalidade de Outubro**</p>
+                <p class="due-date">Vencimento: 10/11/2025</p>
+                <p class="due-value">R$ 550,00</p>
+                <button class="action-btn primary-btn">Baixar Boleto</button>
+            </div>
+            <div class="history">
+                <h3>Histórico Recente</h3>
+                <ul>
+                    <li>Setembro/2025: Pago em 05/09</li>
+                    <li>Agosto/2025: Pago em 12/08</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="secretaria" class="content-section hidden-section">
+        <h1>📬 Contato Rápido com a Secretaria</h1>
+        <p>Use o formulário abaixo para tirar dúvidas sobre documentos, horários ou agendar atendimento.</p>
+        
+        <form class="contact-form">
+            <label for="topic">Assunto:</label>
+            <select id="topic" name="topic">
+                <option value="documento">Documentos (Declarações/Histórico)</option>
+                <option value="horario">Horários de Aula</option>
+                <option value="financeiro">Financeiro/Boleto</option>
+                <option value="outro">Outro Assunto</option>
+            </select>
+            
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit" class="action-btn primary-btn">Enviar Solicitação</button>
+        </form>
+    </section>
+
+</main>
+   <script>
+    // Script para alternar entre as abas do dashboard
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const targetId = link.getAttribute('data-target');
+
+                // 1. Alterna a classe 'active' nos links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                link.classList.add('active');
+
+                // 2. Alterna a visibilidade das seções
+                contentSections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden-section');
+                        section.classList.add('active-section');
+                    } else {
+                        section.classList.remove('active-section');
+                        section.classList.add('hidden-section');
+                    }
+                });
+            });
+        });
+
+        // Funcionalidade do botão "Sair" (já existente)
         document.getElementById('logout-btn').addEventListener('click', () => {
             alert('Sessão encerrada com sucesso!');
-            window.location.href = 'login.html'; // Redireciona para a tela de login
+            window.location.href = 'login.html';
         });
-        
-        // Simulação de preenchimento de perfil (em um projeto real, isso viria do backend)
-        // const username = sessionStorage.getItem('loggedUsername') || 'Aluno(a)'; 
-        // document.getElementById('aluno-nome').textContent = username;
-        
-    </script>
+    });
+</script>
 </body>
 </html>
