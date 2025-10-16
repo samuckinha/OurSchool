@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="dashboard_style.css"> 
+</head>
+<body>
 
+    <header class="cabecalho-itens dashboard-header">
+        <div class="logo-area">
+            <a href="index.html">
+                <img class="cabecalho_imagem" src="logo_nossa_escola.png" alt="Logo da Página">
+                <h1 class="titulo_site">Nossa Escola | Aluno</h1>
+            </a>
+        </div>
+        <button id="logout-btn" class="btn-logout">Sair</button>
+    </header> 
+
+    <div class="dashboard-wrapper">
+        
+        <aside class="profile-sidebar">
+            <img class="profile-avatar" src="estudante_menino.png" alt="Foto do Aluno">
+            <h3 id="aluno-nome">Samuel Schamne</h3>
+            <p id="aluno-ra" class="ra-info">RA: 123456</p>
+            <hr>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active">🏠 Dashboard</a>
+                <a href="#notas" class="nav-item">📊 Minhas Notas</a>
+                <a href="#aulas" class="nav-item">📚 Conteúdo / Aulas</a>
+                <a href="#financeiro" class="nav-item">💰 Financeiro</a>
+                <a href="#secretaria" class="nav-item">📬 Contato Secretaria</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            
+            <section class="welcome-section">
+                <h1>Bem-vindo(a) de volta, Samuel!</h1>
+                <p>Aqui você encontra todas as informações sobre sua vida escolar.</p>
+            </section>
+
+            <div class="feature-card carteirinha-card">
+                <h2>Carteirinha Digital</h2>
+                <div class="student-id-card">
+                    <img src="logo_nossa_escola.png" alt="Logo" class="card-logo">
+                    <p class="card-title">CARTEIRINHA ESTUDANTIL</p>
+                    <p class="card-name" id="card-nome">Samuel Schamne</p>
+                    <p class="card-ra" id="card-ra">RA: 123456</p>
+                    <p class="card-validity">Válida até: 12/2025</p>
+                </div>
+                <button class="action-btn primary-btn">Imprimir PDF</button>
+            </div>
+
+            <div class="feature-card notes-card">
+                <h2>Notas Recentes</h2>
+                <ul>
+                    <li>**Desenvolvimento Web:** 9.5</li>
+                    <li>**Banco de Dados:** 8.0</li>
+                    <li>**Matemática:** 7.8</li>
+                </ul>
+                <button class="action-btn secondary-btn">Ver Detalhes</button>
+            </div>
+
+            <div class="feature-card notices-card">
+                <h2>Avisos Importantes</h2>
+                <div class="notice">
+                    <p>⚠️ **Prova de ADS Adiada:** Nova data: 25/11.</p>
+                    <p>🔔 **Reunião de Pais:** Dia 20/10 às 19h.</p>
+                </div>
+                <button class="action-btn secondary-btn">Ver Todos</button>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            alert('Sessão encerrada com sucesso!');
+            window.location.href = 'login.html'; // Redireciona para a tela de login
+        });
+        
+        // Simulação de preenchimento de perfil (em um projeto real, isso viria do backend)
+        // const username = sessionStorage.getItem('loggedUsername') || 'Aluno(a)'; 
+        // document.getElementById('aluno-nome').textContent = username;
+        
+    </script>
+</body>
+</html>

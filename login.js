@@ -29,14 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Redireciona após 1 segundo
                     setTimeout(() => {
-                        alert(`Bem-vindo, ${username}! (Ação simulada, sem backend)`);
-                        // Aqui você redirecionaria para a área logada do aluno:
-                        // window.location.href = 'area_aluno.html';
                         
-                        // Para este exemplo, voltamos ao estado inicial:
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Entrar';
-                        submitButton.style.backgroundColor = '#40A2E3'; 
+                    window.location.href = 'area_do_aluno.html';
                     }, 1000);
                 }
             }, 1500); // 1.5 segundos de "carregamento" simulado
